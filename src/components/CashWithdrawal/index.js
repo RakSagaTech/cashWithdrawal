@@ -6,29 +6,34 @@ import DenominationItem from '../DenominationItem'
 import './index.css'
 
 class CashWithdrawal extends Component {
+  state = {
+    balance: 2000,
+  }
+
   render() {
+    const {balance} = this.state
     const {denominationsList} = this.props
     return (
-      <div>
-        <div>
-          <div>
-            <div>
-              <p> S </p>
+      <div className="app-container">
+        <div className="cash-withdrawal-container">
+          <div className="user-details-container">
+            <div className="initial-container">
+              <p className="initial"> S </p>
             </div>
-            <p> Sarah Williams </p>
+            <p className="name"> Sarah Williams </p>
           </div>
-          <div>
-            <p> Your Balance </p>
-            <p>
+          <div className="balance-container">
+            <p className="your-balance"> Your Balance </p>
+            <p className="balance">
               {' '}
-              2000
+              {balance}
               <br />
-              <p> In Rupees </p>
+              <p className="currency"> In Rupees </p>
             </p>
           </div>
-          <p> Withdraw </p>
-          <p> CHOOSE SUM (IN RUPEES) </p>
-          <ul>
+          <p className="withdraw"> Withdraw </p>
+          <p className="choose-sum"> CHOOSE SUM (IN RUPEES) </p>
+          <ul className="denominations-list">
             {denominationsList.map(eachDenomination => (
               <DenominationItem
                 key={eachDenomination.id}

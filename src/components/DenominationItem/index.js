@@ -4,13 +4,13 @@ import './index.css'
 
 const DenominationItem = props => {
   const {denominationDetails} = props
-  const {id, value} = denominationDetails 
+  const {value} = denominationDetails
 
   return (
-    <li> 
-        <button type="button">
-            {value}
-        </button>
+    <li className="denomination-item">
+      <button type="button" className="denomination-btn">
+        {value}
+      </button>
     </li>
   )
 }
