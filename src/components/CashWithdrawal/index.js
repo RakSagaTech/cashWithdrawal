@@ -10,6 +10,10 @@ class CashWithdrawal extends Component {
     balance: 2000,
   }
 
+  updateBalance = value => {
+    this.setState(prevState => ({balance: prevState.balance - value}))
+  }
+
   render() {
     const {balance} = this.state
     const {denominationsList} = this.props
@@ -38,6 +42,7 @@ class CashWithdrawal extends Component {
               <DenominationItem
                 key={eachDenomination.id}
                 denominationDetails={eachDenomination}
+                updateBalance={this.updateBalance}
               />
             ))}
           </ul>
